@@ -1,0 +1,50 @@
+<div class="main-container">
+  <div class="left-container">
+      <img src="Illustration.png" alt="Illustration">
+  </div>
+  <form class="right" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="right-container">
+      <div>
+        <h3 class="Heading">Welcome to <br><span class="Unstop">Unstop</span></h3>
+      </div>
+      <div class="flex-containers google"><img src="search 1.png" alt="Google"><p>Login with Google</p></div>
+      <div class="flex-containers google"><img src="facebook.png" alt="Facebook"><p>Login with Facebook</p></div>
+      <div class="or"><p></p><span>OR</span></div>
+      <div class="input-fields"><img src="account_circle.png" alt="Account">
+        <div class="inputs-container">
+          <p>Username</p>
+          <input type="text" value="" formControlName="username" appUsername placeholder="Enter Username">
+        </div>
+      </div>
+      <div class="input-fields">
+        <img src="/mail.png" alt="Email">
+        <div class="inputs-container">
+          <p>Email</p>
+          <input type="email" value="" formControlName="email" placeholder="Enter Email">
+        </div>
+      </div>
+      <div style="color: #d11d1d !important;" class="error-input" *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched">
+        Invalid email format
+      </div>
+      <div class="input-fields">
+        <img src="key.png" alt="Password">
+        <div class="inputs-container">
+          <p>Password</p>
+          <input type="password" value="" formControlName="password" placeholder="Enter Password">
+        </div>
+      </div>
+      <div style="color: #d11d1d !important;" *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">
+        Password must be at least 8 characters
+      </div>
+      <div class="forgot">
+        <div class="remeber">
+          <input type="checkbox">
+          <p>Remember me</p>
+        </div>
+        <a href="#" class="forgoty">Forgot Password?</a>
+      </div>
+      <div class="login"><button type="submit">Login</button></div>
+      <div class="Register"><p class="forgotyyy">Don't have an account? </p><a class="forgotyy" href="#">Register</a></div>
+    </div>
+  </form>
+</div>

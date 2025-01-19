@@ -1,0 +1,216 @@
+.main-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.left-container {
+    width: 40% !important;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+}
+
+.left-container img {
+    max-width: 100%;
+    display: block;
+}
+
+.right{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-container {
+    background-color: #fff;
+    min-width: 75%;
+    max-height: 100%;
+    border-radius: 2rem;
+    border: 1px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.Heading {
+    font-weight: 500;
+    font-size: 3.6rem !important;
+    line-height: 4.8rem;
+}
+
+.Unstop {
+    font-weight: 900;
+    font-size: 4.6rem !important;
+    line-height: 6.3rem;
+    color: #6358dc;
+}
+
+.google {
+    font-size: 1.6rem;
+    font-weight: 500;
+    gap: 1rem;
+    border-radius: 1.6rem;
+    border: 1px solid #E2E2E2;
+    padding: 2.1rem;
+    cursor: pointer;
+}
+
+.flex-containers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.google img {
+    width: 3.2rem;
+    height: 3.2rem;
+}
+
+.or {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.or p {
+    font-weight: 500;
+    border-bottom: 1px solid #1C1B1F;
+    width: 100%;
+}
+.or span {
+    font-weight: 500;
+    z-index: 11;
+    position: absolute;
+    background-color: #fff;
+    padding: 0rem 2rem;
+}
+
+.input-fields {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
+    min-width: 100%;
+    gap: 1rem;
+    border-radius: 1rem;
+    background-color: #f4f4f4;
+}
+
+.inputs-container input {
+    all: unset;
+    font-size: 1.5rem;
+    min-width: 100%;
+    color: #1c1b1f;
+    font-weight: 900;
+    background-color: #f4f4f4;
+}
+
+.forgot {
+    color: #1c1b1f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.remeber input {
+    background: #e2e2e2;
+    accent-color: #F4F4F4;
+}
+
+.remeber p {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.forgoty, .forgotyy {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #6358dc;
+}
+
+.remeber {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.login button {
+    all: unset;
+    border-radius: 1.2rem;
+    background-color: #6358dc;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.Register {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.forgotyyy {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.error-alert{
+    color: #d11d1d !important;
+}
+
+@media (min-width: 901px) {
+    .main-container {
+        flex-direction: row;
+    }
+    .left-container {
+        width: 40%;
+    }
+
+    .right-container {
+        width: 75%;
+        padding: 3rem;
+    }
+    .right {
+        width: 60%;
+    }
+
+    .Heading {
+        font-size: 3.6rem;
+    }
+
+    .Unstop {
+        font-size: 4.6rem;
+    }
+
+    .google {
+        width: 100%;
+        padding: 2.2rem;
+    }
+
+}
