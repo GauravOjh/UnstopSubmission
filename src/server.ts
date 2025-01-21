@@ -12,8 +12,9 @@ import { CommonEngine } from '@angular/ssr/node'
 import { render } from '@netlify/angular-runtime/common-engine';
 import { LocalStorage } from 'node-localstorage';
 
-globalThis['localStorage'] = new LocalStorage('./scratch');
-
+if (typeof globalThis !== 'undefined') {
+  globalThis['localStorage'] = new LocalStorage('./scratch');
+}
 const commonEngine = new CommonEngine()
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
