@@ -11,7 +11,7 @@ import 'localstorage-polyfill'
 import { CommonEngine } from '@angular/ssr/node'
 import { render } from '@netlify/angular-runtime/common-engine'
 
-global['localStorage'] = localStorage;
+globalThis['localStorage'] = localStorage;
 
 const commonEngine = new CommonEngine()
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
