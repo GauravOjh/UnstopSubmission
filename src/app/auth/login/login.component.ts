@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { UsernameDirective } from '../../Directive/username.directive';
 import { AuthapiService } from '../../Services/authapi.service';
+import { Authresponseuserdata } from '../../model/authresponsedata';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ import { AuthapiService } from '../../Services/authapi.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup | any;
+  readonly userData = signal<Authresponseuserdata | null>(null);
 
   constructor(
     private fb: FormBuilder,
@@ -28,7 +30,6 @@ export class LoginComponent implements OnInit {
     // if (localStorage.getItem('userData')) {
     //   this.router.navigate(['/home']);
     // }
-    this.auth.autoLogin();
 
     this.loginForm = this.fb.group({
       username: ['', [Validators.required, Validators.pattern(/^emilys$/)]],
@@ -48,9 +49,8 @@ export class LoginComponent implements OnInit {
 
       this.auth.login(loginData).subscribe({
         next:(response:any)=>{
-          // localStorage.setItem('userData', JSON.stringify(response));
           this.router.navigate(['/home']);
-          console.log(response);
+          localStorage.setItem('loggedin',JSON.stringify(response));
         } ,
         error:(error)=>{
           console.error('Login failed', error)

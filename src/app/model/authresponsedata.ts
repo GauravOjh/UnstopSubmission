@@ -1,7 +1,11 @@
 export interface Authresponseuserdata{
-    email:string,
-    username:string,
-    password : string,
-    expiresInMins:Date,
-    token:string
+    accessToken: string,
+    email: string,
+    firstName: string,
+    gender: string,
+    id: number
+    image: string,
+    lastName: string,
+    refreshToken: string,
+    username: string,
 }
