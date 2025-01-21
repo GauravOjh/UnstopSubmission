@@ -10,7 +10,7 @@ import { AuthapiService } from '../../Services/authapi.service';
 })
 export class HomeComponent implements OnInit {
   image = JSON.parse(localStorage.getItem('loggedin') || '{}').image; 
-  name = JSON.parse(localStorage.getItem('loggedin')|| '{}').firstName + " " + JSON.parse(localStorage.getItem('loggedin')!).lastName;
+  name = JSON.parse(localStorage.getItem('loggedin')|| '{}').firstName + " " + JSON.parse(localStorage.getItem('loggedin') || '{}').lastName;
   email = JSON.parse(localStorage.getItem('loggedin') || '{}').email;
   gender=JSON.parse(localStorage.getItem('loggedin') || '{}').gender;
   constructor(private router: Router,private auth:AuthapiService) {}
