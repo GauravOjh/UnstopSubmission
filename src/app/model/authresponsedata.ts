@@ -4,7 +4,7 @@ export interface Authresponseuserdata{
     firstName: string,
     gender: string,
     id: number
-    images: string,
+    image: string,
     lastName: string,
     refreshToken: string,
     username: string,

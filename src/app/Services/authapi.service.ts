@@ -9,7 +9,7 @@ import { User } from '../model/user';
 })
 export class AuthapiService {
   readonly userData = signal<Authresponseuserdata | null>(null);
-  loginData:any;
+  loginData!: Authresponseuserdata;
   constructor(private http:HttpClient) { }
 
   private apiUrl = 'https://dummyjson.com/auth/login';
