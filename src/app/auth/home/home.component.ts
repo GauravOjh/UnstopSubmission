@@ -15,10 +15,12 @@ export class HomeComponent implements OnInit {
   gender: any;
   constructor(private router: Router,private auth:AuthapiService) {}
   ngOnInit(): void {
+    if(this.auth.loginData!=undefined){
     this.images = this.auth.loginData.image;
     this.emails = this.auth.loginData.email;
     this.name = this.auth.loginData.firstName + " " + this.auth.loginData.lastName;
-    this.gender = this.auth.loginData.gender;
+    this.gender = this.auth.loginData.gender; 
+    }
   }
   
   logout(): void {
