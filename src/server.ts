@@ -12,6 +12,10 @@ import { CommonEngine } from '@angular/ssr/node'
 import { render } from '@netlify/angular-runtime/common-engine';
 
 
+export async function netlifyCommonEngineHandler(request: Request, context: any): Promise<Response> {
+  return await render(commonEngine)
+}
+
 const commonEngine = new CommonEngine()
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
