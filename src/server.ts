@@ -10,19 +10,11 @@ import { fileURLToPath } from 'node:url';
 import 'localstorage-polyfill'
 import { CommonEngine } from '@angular/ssr/node'
 import { render } from '@netlify/angular-runtime/common-engine';
-import { LocalStorage } from 'node-localstorage';
 
-if (typeof globalThis !== 'undefined') {
-  globalThis['localStorage'] = new LocalStorage('./scratch');
-}
+
 const commonEngine = new CommonEngine()
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
-
-export async function netlifyCommonEngineHandler(request: Request, context: any): Promise<Response> {
-  return await render(commonEngine)
-}
-
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 

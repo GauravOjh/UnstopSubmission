@@ -9,6 +9,7 @@ import { User } from '../model/user';
 })
 export class AuthapiService {
   readonly userData = signal<Authresponseuserdata | null>(null);
+  loginData:any;
   constructor(private http:HttpClient) { }
 
   private apiUrl = 'https://dummyjson.com/auth/login';
@@ -16,7 +17,7 @@ export class AuthapiService {
   login(data: { username: string; email?: string; password: string }): Observable<any> {
     return this.http.post(this.apiUrl, { ...data, expiresInMins: 30 });
   }
-  shareData(data:Authresponseuserdata){
-    this.userData.set(data);
+  shareData(response:any){
+    this.loginData = response;
   }
 }

@@ -26,11 +26,6 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Redirect if already logged in
-    // if (localStorage.getItem('userData')) {
-    //   this.router.navigate(['/home']);
-    // }
-
     this.loginForm = this.fb.group({
       username: ['', [Validators.required, Validators.pattern(/^emilys$/)]],
       email: ['', [Validators.required, Validators.email]],
@@ -50,6 +45,7 @@ export class LoginComponent implements OnInit {
       this.auth.login(loginData).subscribe({
         next:(response:any)=>{
           this.router.navigate(['/home']);
+          this.auth.shareData(response);
           localStorage.setItem('loggedin',JSON.stringify(response));
         } ,
         error:(error)=>{
